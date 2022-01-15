@@ -73,7 +73,7 @@ async function main(){
     const nDAICoins = await minReturnUni(ExtropyCoin, DAI, nExtropyCoins);
     // Check we have similar amount of DAI that we started with
     console.log(`nDAICoins ${nDAICoins}, nExtropyCoins ${nExtropyCoins}`)
-    // percentage = 
+    // Sanity check - should equal close to 1.0
     console.log(`input/output = ${amountIn/nDAICoins}`)
 } 
 

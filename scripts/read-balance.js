@@ -1,5 +1,5 @@
 const { ethers } = require("ethers");
-const IERC20 = require("../abis/IERC20.json")
+const IERC20 = require('@uniswap/v2-periphery/build/IERC20.json');
 var url = "http://18.130.233.246:9454";
 
 // Setup provider
@@ -23,7 +23,7 @@ const SushiBar = '0xae0c9b71522944a8910189cd88b3d056be257a1d';
 const SushiMaker = '0xcdbcfa2243ad006cc62ba079d393cf28e0e3baf5';
 
 async function getExtropyBalance(){
-    const contract = new ethers.Contract(ExtropyCoin, IERC20, provider);
+    const contract = new ethers.Contract(ExtropyCoin, IERC20.abi, provider);
     const balance = await contract.balanceOf(MyAddress);
     const decimals = await contract.decimals(); 
     nTokens = balance.toBigInt()/(BigInt(10)**BigInt(decimals))
